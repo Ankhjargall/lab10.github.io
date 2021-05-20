@@ -1,0 +1,88 @@
+<DOCTYPE html>
+<html>
+<head>
+<title>Calculator</title>
+<style type="text/css">
+	.container{
+		background-color: blue;
+		width: 200px;
+		height: 300px;
+		padding: 20px;
+		border-radius: 10px;
+	}
+.window{
+	background-color: white;
+	padding: 3px;
+	text-align: right;
+	height: 20px;
+
+}
+.keys{
+   margin: 12px;
+}
+button{
+	width: 40px;
+	height: 40px;
+	margin-top: 20px;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div class="window">0</div>
+		<div class="keys">
+	    <button onclick="plus('+')">+</button>
+		<button onclick="hasah('-')">-</button>
+		<button onclick="expression('*')">*</button>
+		<button onclick="huwaah('/')">/</button>
+	    <button onclick="expression('1')">1</button>
+		<button onclick="expression('2')">2</button>
+		<button onclick="expression('3')">3</button>
+		<button onclick="arilgah()">C</button>
+		<button onclick="expression('4')">4</button>
+		<button onclick="expression('5')">5</button>
+		<button onclick="expression('6')">6</button>
+		<button onclick="expression('0')">0</button>
+		<button onclick="expression('7')">7</button>
+		<button onclick="expression('8')">8</button>
+		<button onclick="expression('9')">9</button>
+		<button onclick="calculateme()">=</button>
+	</div>
+</div>
+<script type="text/javascript">
+	var exp="0";
+	function expression(ch){
+		if (exp=="0")  exp = ch.toString();
+		else exp = exp +ch.toString();
+		document.getElementsByClassName("window")[0].innerHTML=exp;
+}
+function calculateme(){
+	result = eval(exp);
+	document.getElementsByClassName("window")[0].innerHTML=result;
+	exp = result;
+}
+function plus(){
+	exp= exp + "+";
+	document.getElementsByClassName("window")[0].innerHTML=document.getElementsByClassName("window")[0].innerHTML +"+";
+}
+function hasah(){
+	exp= exp + "-";
+	document.getElementsByClassName("window")[0].innerHTML=document.getElementsByClassName("window")[0].innerHTML +"-";
+}
+function huwaah(){
+	exp= exp + "/";
+	document.getElementsByClassName("window")[0].innerHTML=document.getElementsByClassName("window")[0].innerHTML +"/";
+}
+function urjih(){
+	exp= exp + "*";
+	document.getElementsByClassName("window")[0].innerHTML=document.getElementsByClassName("window")[0].innerHTML +"*";
+}
+function arilgah(){
+	exp= "0";
+	document.getElementsByClassName("window")[0].innerHTML="0";
+}
+
+
+    </script>
+</body>
+</html>
